@@ -9,11 +9,8 @@ import javax.persistence.Entity;
 public class Enseignant extends Utilisateur{
 
 	private static final long serialVersionUID = 1L;
-	@Column(nullable = false)
 	protected String departement;
-	@Column(nullable = false)
 	protected String grade;
-	@Column(nullable = true)
 	protected String specialite;
 	
 	public Enseignant() {

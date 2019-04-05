@@ -135,5 +135,4 @@ public abstract class Utilisateur implements Serializable{
 		this.tel = tel;
 	}
 	
-	
 }

@@ -1,6 +1,5 @@
 package mgc.entities;
 
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -10,7 +9,6 @@ public class Sspe extends Utilisateur{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Column(nullable = false)
 	protected String poste;
 
 	public Sspe() {
