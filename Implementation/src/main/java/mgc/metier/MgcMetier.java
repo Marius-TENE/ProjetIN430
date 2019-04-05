@@ -1,10 +1,8 @@
 package mgc.metier;
 
-import java.util.Optional;
-
 import mgc.entities.Utilisateur;
 
-public interface mgcMetier {
+public interface MgcMetier {
 	public Utilisateur creerUtilisateur(Utilisateur u);
 	public Utilisateur modifierInfosConnexion(Utilisateur u);
 	public Utilisateur modifierInfosUtilisateur(Utilisateur u);

@@ -11,7 +11,7 @@ import mgc.entities.Utilisateur;
 
 @Service
 @Transactional
-public class mgcMetierImplementation implements mgcMetier{
+public class MgcMetierImplementation implements MgcMetier{
 	
 	@Autowired
 	private UtilisateurRepository utr;
