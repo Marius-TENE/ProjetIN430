@@ -27,13 +27,15 @@ public abstract class Utilisateur implements Serializable{
 	protected String nom;
 	@Column(nullable = true)
 	protected String prenom;
-	@Column(nullable = false)
+	@Column(nullable = false,unique = true)
 	protected String email;
+	@Column(nullable = true,unique = true)
+	protected String login;
 	@Column(nullable = false)
 	protected String password;
 	@Column(nullable = false)
 	protected String adresse;
-	@Column(nullable = false)
+	@Column(nullable = false,unique = true)
 	protected String tel;
 	
 	public Utilisateur() {
@@ -47,6 +49,20 @@ public abstract class Utilisateur implements Serializable{
 		this.matricule = matricule;
 		this.nom = nom;
 		this.email = email;
+		this.password = password;
+		this.adresse = adresse;
+		this.tel = tel;
+	}
+	
+
+	public Utilisateur(String matricule, String nom, String prenom, String email, String login, String password,
+			String adresse, String tel) {
+		super();
+		this.matricule = matricule;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.login = login;
 		this.password = password;
 		this.adresse = adresse;
 		this.tel = tel;
@@ -134,5 +150,17 @@ public abstract class Utilisateur implements Serializable{
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
+
+	public String getLogin() {
+		return login;
+	}
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	
 	
 }

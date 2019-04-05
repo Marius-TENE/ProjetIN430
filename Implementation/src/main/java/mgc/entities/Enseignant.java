@@ -47,8 +47,15 @@ public class Enseignant extends Utilisateur{
 		this.departement = departement;
 		this.grade = grade;
 	}
-	
-	
+
+	public Enseignant(String matricule, String nom, String prenom, String email, String login, String password,
+			String adresse, String tel, String departement, String grade, String specialite, String statut) {
+		super(matricule, nom, prenom, email, login, password, adresse, tel);
+		this.departement = departement;
+		this.grade = grade;
+		this.specialite = specialite;
+		this.statut = statut;
+	}
 	public Enseignant(String matricule, String nom, String prenom, String email, String password, String adresse,
 			String tel, String departement, String grade, String specialite, String statut) {
 		super(matricule, nom, prenom, email, password, adresse, tel);

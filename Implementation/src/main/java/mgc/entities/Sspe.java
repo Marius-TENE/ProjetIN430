@@ -22,6 +22,12 @@ public class Sspe extends Utilisateur{
 		// TODO Auto-generated constructor stub
 	}
 
+	public Sspe(String matricule, String nom, String prenom, String email, String login, String password,
+			String adresse, String tel, String poste) {
+		super(matricule, nom, prenom, email, login, password, adresse, tel);
+		this.poste = poste;
+	}
+
 	public Sspe(String matricule, String nom, String email, String password, String adresse, String tel) {
 		super(matricule, nom, email, password, adresse, tel);
 		// TODO Auto-generated constructor stub
