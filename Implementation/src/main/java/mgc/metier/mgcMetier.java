@@ -1,5 +1,7 @@
 package mgc.metier;
 
+import java.util.Optional;
+
 import mgc.entities.Utilisateur;
 
 public interface mgcMetier {
@@ -9,5 +11,7 @@ public interface mgcMetier {
 	public Utilisateur modifierStatutUtilisateur(Utilisateur u);
 	public Utilisateur chercherUtilisateur(String matricule, String password);
 	public Utilisateur recupererCompte(String matricule,String email);
+	public boolean chercherUtilisateur(String matricule);
+	
 
 }

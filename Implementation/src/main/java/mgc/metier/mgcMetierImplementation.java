@@ -1,5 +1,7 @@
 package mgc.metier;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,8 +17,25 @@ public class mgcMetierImplementation implements mgcMetier{
 	private UtilisateurRepository utr;
 	
 	@Override
+	public boolean chercherUtilisateur(String matricule) {
+		Optional<Utilisateur> u = utr.findById(matricule);
+		
+		boolean rep=false;
+		if ( u!=null ) {
+			rep=true;
+		}
+		return rep;
+	}
+	
+	@Override
 	public Utilisateur creerUtilisateur(Utilisateur u) {
-		utr.save(u);
+		if( chercherUtilisateur(u.getMatricule())==true ) {
+			// utilisateur deja existant
+		}
+		else {
+			u.setLogin(u.getMatricule());
+			utr.save(u);
+		}
 		return u;
 	}
 
@@ -38,15 +57,27 @@ public class mgcMetierImplementation implements mgcMetier{
 		return u;
 	}
 
+
 	@Override
-	public Utilisateur chercherUtilisateur(String matricule, String password) {
+	public Utilisateur recupererCompte(String matricule, String email) {
+		if (chercherUtilisateur(matricule)==true) {
+			Utilisateur u = utr.getOne(matricule);
+			if (u.getEmail()==email) {
+				return u;
+			}
+			else {
+				System.out.print("Email ne correspond pas");
+			}
+		}
+		else {
+			// Utilisateur introuvable
+		}
 		return null;
 	}
 
 	@Override
-	public Utilisateur recupererCompte(String matricule, String email) {
-		// TODO Auto-generated method stub
-		return null;
+	public Utilisateur chercherUtilisateur(String matricule, String password) {
+		return recupererCompte(matricule,password);
 	}
 
 }
