@@ -21,7 +21,8 @@ principale.
  - Téléchargez et installez glassfish dans sts(Sprint Tool Suite)
  - Téléchargez et installe mysql. Puis créer un nouvel utilisateur avec les 
 	infos suivantes. username="projet430" password=groupe7. Et donnez 
-	toutes les autorisations à cet utilisateur.
+	toutes les autorisations à cet utilisateur. enfin créer une base de données nommée 
+		dbprojet430
  - Lancez sts et cliquez sur fichier/open projects from system file, puis 
 	indiquez le chemin du projet.
  - Il vous fauda très surement la connexion à internet pour que sts puisse
