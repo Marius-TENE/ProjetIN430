@@ -1,6 +1,5 @@
 package mgc.entities;
 
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -12,6 +11,8 @@ public class Enseignant extends Utilisateur{
 	protected String departement;
 	protected String grade;
 	protected String specialite;
+	protected String statut;
+	
 	
 	public Enseignant() {
 		super();
@@ -46,6 +47,16 @@ public class Enseignant extends Utilisateur{
 		this.departement = departement;
 		this.grade = grade;
 	}
+	
+	
+	public Enseignant(String matricule, String nom, String prenom, String email, String password, String adresse,
+			String tel, String departement, String grade, String specialite, String statut) {
+		super(matricule, nom, prenom, email, password, adresse, tel);
+		this.departement = departement;
+		this.grade = grade;
+		this.specialite = specialite;
+		this.statut = statut;
+	}
 	public String getDepartement() {
 		return departement;
 	}
@@ -63,6 +74,12 @@ public class Enseignant extends Utilisateur{
 	}
 	public void setSpecialite(String specialite) {
 		this.specialite = specialite;
+	}
+	public String getStatut() {
+		return statut;
+	}
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 	
 }
