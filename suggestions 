@@ -1,0 +1,31 @@
+1. Dans le dossier ProjetIN430, le sous dossier Implementation représente 
+le code proprement dit. Donc lorsque quelqu'un veut travailler sur le code,
+c'est ce sous dossier qu'il importe dans son IDE comme projet.
+
+2. Fatimah il faut créer un autre sous dossier dans le Projet pour mettre 
+tous les documents d'analyses que nous avons déja jusqu'ici. Ainsi lorsqu'on 
+modifiera une chose dans les spécifications par exemple, que tout le monde
+soit au courant le plutôt.
+
+3. Evitons de faire des commits sur la branche principale(branche master). 
+Quand quelqu'un veut faire une modification majeure, il est souhaitable
+qui crée une nouvelle branche, puis modifie et le jour qu'on teste ensemble
+et que tout marche correctement c'est en ce moment qu'on rajoute à la branche
+principale.
+
+4. Pour executer ouvrir le projet(partie implemntation), suivez les 
+étapes suivantes:
+
+ - Installer et configurer java 8
+ - Installer Sprint tool Suite 4
+ - Téléchargez et installez glassfish dans sts(Sprint Tool Suite)
+ - Téléchargez et installe mysql. Puis créer un nouvel utilisateur avec les 
+	infos suivantes. username="projet430" password=groupe7. Et donnez 
+	toutes les autorisations à cet utilisateur.
+ - Lancez sts et cliquez sur fichier/open projects from system file, puis 
+	indiquez le chemin du projet.
+ - Il vous fauda très surement la connexion à internet pour que sts puisse
+	télécharger les dépendances qui sont liées aux projet.
+  
+
+ 
