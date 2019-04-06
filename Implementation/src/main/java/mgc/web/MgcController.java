@@ -12,9 +12,9 @@ public class MgcController {
 	@Autowired
 	private MgcMetier mgcMetier;
 	
-	@RequestMapping("/connecion")
+	@RequestMapping("/connexion")
 	public String index() {
-		return "connexion";
+		return "pages/connexion";
 	}
 
 }
