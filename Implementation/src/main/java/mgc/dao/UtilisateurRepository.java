@@ -6,5 +6,5 @@ import mgc.entities.Utilisateur;
 
 public interface UtilisateurRepository 
 extends JpaRepository<Utilisateur, String> {
-
+	
 }

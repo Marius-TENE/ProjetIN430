@@ -1,7 +1,5 @@
 package mgc.metier;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,13 +16,7 @@ public class MgcMetierImplementation implements MgcMetier{
 	
 	@Override
 	public boolean chercherUtilisateur(String matricule) {
-		Optional<Utilisateur> u = utr.findById(matricule);
-		
-		boolean rep=false;
-		if ( u!=null ) {
-			rep=true;
-		}
-		return rep;
+		return utr.existsById(matricule);
 	}
 	
 	@Override
@@ -76,8 +68,13 @@ public class MgcMetierImplementation implements MgcMetier{
 	}
 
 	@Override
-	public Utilisateur chercherUtilisateur(String matricule, String password) {
-		return recupererCompte(matricule,password);
+	public Utilisateur recupererUtilisateur(String matricule) {
+		if (chercherUtilisateur(matricule)==true){
+			return utr.getOne(matricule);
+		}
+		else {
+			return null;
+		}
 	}
 
 }
